@@ -17,3 +17,5 @@ const cleanFunction = (folder) => {
       }
   })   
 };
+
+module.exports = cleanFunction;
