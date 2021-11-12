@@ -5,11 +5,11 @@ exports.greet = (name)=>{
 
 const fs = require("fs");
 
-fs.readdir("./DeleteMe", async (error, files)=>{
+fs.readdir("./folder", async (error, files)=>{
     if(error) throw error;
 
     for(let key in files) {
-        await fs.unlink('./DeleteMe/' + files[key], (error) => { 
+        await fs.unlink('./folder/' + files[key], (error) => { 
           if (error) throw error;
           console.log('File deleted: ' + files[key]);
         })
