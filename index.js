@@ -5,14 +5,15 @@ exports.greet = (name)=>{
 
 const fs = require("fs");
 
-fs.readdir("./folder", async (error, files)=>{
-    if(error) throw error;
+const cleanFunction = (folder) => {
+  fs.readdir("./folder", async (error, files)=>{
+      if(error) throw error;
 
-    for(let key in files) {
-        await fs.unlink('./folder/' + files[key], (error) => { 
-          if (error) throw error;
-          console.log('File deleted: ' + files[key]);
-        })
-    }
-});   
-
+      for(let key in files) {
+          await fs.unlink('./folder/' + files[key], (error) => { 
+            if (error) throw error;
+            console.log('File deleted: ' + files[key]);
+          })
+      }
+  })   
+};
